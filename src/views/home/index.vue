@@ -1,7 +1,7 @@
 <!--
  * @Author: Topskys
  * @Date: 2022-09-27 17:47:43
- * @LastEditTime: 2022-09-28 14:46:24
+ * @LastEditTime: 2022-09-28 15:16:03
 -->
 <template>
   <el-row class="Home" :gutter="20">
@@ -27,7 +27,7 @@
       </el-card>
     </el-col>
     <el-col :span="16">
-      <el-card>
+      <el-card shadow="hover"  :body-style="{padding:0}">
         <div class="count">
           <el-card shadow="hover" v-for="item in countData" :key="item.name" :body-style="{display:'flex',padding:0}">
             <div class="icon" :class="`el-icon-${item.icon}`" :style="{backgroundColor:item.color}"></div>
@@ -39,16 +39,16 @@
           </el-card>
         </div>
       </el-card>
-      <el-card style="height:260px; margin-top: 20px;">
+      <el-card shadow="hover" style="height:240px; margin-top: 20px;">
         <!-- <div style="height:260px;" ref="echarts"></div> -->
         <Echart :chartData="echartData.order" style="height:240px;"></Echart>
       </el-card>
       <div class="graph">
-        <el-card style="height:260px;">
+        <el-card shadow="hover" style="height:260px;">
           <!-- <div style="height:260px;" ref="userEcharts"></div> -->
           <Echart :chartData="echartData.user" style="height:240px;"></Echart>
         </el-card>
-        <el-card style="height:260px;">
+        <el-card shadow="hover" style="height:260px;">
           <!-- <div style="height:260px;" ref="videoEcharts"></div> -->
           <Echart :chartData="echartData.video" :isAxisChart="false" style="height:240px;"></Echart>
         </el-card>
