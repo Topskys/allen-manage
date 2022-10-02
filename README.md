@@ -1,4 +1,10 @@
+<!--
+ * @Author: Topskys
+ * @Date: 2022-09-27 16:06:56
+ * @LastEditTime: 2022-10-02 11:33:35
+-->
 # allen-manage
+![Image text](image.png)
 
 ## Project setup
 ```
@@ -54,4 +60,9 @@ Client side support for protecting against XSRF
 ### echarts@5.1.2
 ```
 npm i echarts@5.1.2
+```
+
+### js-cookie
+```
+npm i js-cookie
 ```

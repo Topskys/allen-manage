@@ -1,7 +1,7 @@
 <!--
  * @Author: Topskys
  * @Date: 2022-09-27 17:47:43
- * @LastEditTime: 2022-09-28 15:16:03
+ * @LastEditTime: 2022-10-01 11:21:13
 -->
 <template>
   <el-row class="Home" :gutter="20">
@@ -27,7 +27,7 @@
       </el-card>
     </el-col>
     <el-col :span="16">
-      <el-card shadow="hover"  :body-style="{padding:0}">
+      <el-card shadow="hover" :body-style="{padding:0}">
         <div class="count">
           <el-card shadow="hover" v-for="item in countData" :key="item.name" :body-style="{display:'flex',padding:0}">
             <div class="icon" :class="`el-icon-${item.icon}`" :style="{backgroundColor:item.color}"></div>
@@ -122,8 +122,7 @@ export default {
   },
   mounted() {
 
-    getHomeData().then(res => {
-      const { code, data } = res.data
+    getHomeData().then(({ code, data }) => {
       if (code === 200) {
         this.tableData = data.tableData
         const [order, series, xData] = [data.orderData, [], data.orderData.date]

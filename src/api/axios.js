@@ -1,7 +1,7 @@
 /*
  * @Author: Topskys
  * @Date: 2022-09-27 22:51:24
- * @LastEditTime: 2022-09-27 23:09:11
+ * @LastEditTime: 2022-10-01 11:15:03
  */
 import axios from 'axios';
 import config from '../config'
@@ -35,7 +35,7 @@ class HttpRequest {
         // Add a response interceptor
         instance.interceptors.response.use(function (response) {
             // Do something with response data
-            return response;
+            return response.data;
         }, function (error) {
             // Do something with response error
             return Promise.reject(error);

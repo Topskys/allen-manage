@@ -1,7 +1,7 @@
 <!--
  * @Author: Topskys
  * @Date: 2022-09-27 16:06:43
- * @LastEditTime: 2022-09-28 10:34:08
+ * @LastEditTime: 2022-10-02 10:08:26
 -->
 <template>
   <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
@@ -18,7 +18,7 @@
         <span slot="title">{{item.label}}</span>
       </template>
       <el-menu-item-group v-for="(subItem,subIndex) in item.children" :index="subItem.path" :key="subItem.path">
-        <el-menu-item :index="subIndex.toString()">{{subItem.label}}</el-menu-item>
+        <el-menu-item @click="clickMenu(subItem)" :index="subIndex.toString()">{{subItem.label}}</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
 
@@ -27,13 +27,13 @@
 
 
 <script>
-import { getHomeMenu } from '../api/data.js'
+import { getMenu } from '../api/data.js'
 
 export default {
   name: 'CommonAside',
   data() {
     return {
-      menu: [],
+      // menu: [],
     };
   },
   methods: {
@@ -48,24 +48,27 @@ export default {
       this.$router.push({
         name: item.name,
       })
+      this.$store.commit("selectMenu", item)
     }
   },
   computed: {
     noChildren() {
-      return this.menu.filter(item => !item.children)
+      return this.asyncMenu.filter(item => !item.children)
     },
     hasChildren() {
-      return this.menu.filter(item => item.children)
+      return this.asyncMenu.filter(item => item.children)
     },
     isCollapse() {
       return this.$store.state.m_tab.isCollapse
+    },
+    asyncMenu() {
+      return this.$store.state.m_tab.menu
     }
   },
   mounted() {
-    getHomeMenu().then(res => {
-      const { code, data } = res.data
-      code === 200 && (this.menu = data.menu)
-    })
+    // getMenu().then(({ code, data }) => {
+    //   code === 200 && (this.menu = data.menu)
+    // })
   },
 }
 </script>

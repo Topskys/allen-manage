@@ -1,7 +1,7 @@
 /*
  * @Author: Topskys
  * @Date: 2022-09-28 09:38:45
- * @LastEditTime: 2022-09-28 10:13:35
+ * @LastEditTime: 2022-09-28 15:31:53
  */
 import Mock from 'mockjs'
 
@@ -159,7 +159,7 @@ export default {
                             },
                             {
                                 path: "/page2",
-                                name: 'page2 ',
+                                name: 'page2',
                                 label: '页面2',
                                 icon: 'setting',
                                 url: 'other/PageTwo'
