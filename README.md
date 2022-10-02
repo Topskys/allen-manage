@@ -1,10 +1,10 @@
 <!--
  * @Author: Topskys
  * @Date: 2022-09-27 16:06:56
- * @LastEditTime: 2022-10-02 11:33:35
+ * @LastEditTime: 2022-10-02 11:42:28
 -->
 # allen-manage
-![Image text](image.png)
+![Image text](https://github.com/Topskys/allen-manage/blob/main/src/assets/images/R%60UVF_B6T%5DL~Q3%25%5DN43BLRB.png)
 
 ## Project setup
 ```
